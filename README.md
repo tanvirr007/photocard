@@ -117,6 +117,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Aminul Islam**
 - Website: [aminul.net](https://aminul.net)
 - GitHub: [@AminulBD](https://github.com/AminulBD)
+- Facebook: [@aminul.run](https://www.facebook.com/aminul.run)
+- X: [@AminulWP](https://x.com/AminulWP)
+- LinkedIn: [@aminulbd](https://www.linkedin.com/in/aminulbd)
 
 ## Acknowledgments
 
