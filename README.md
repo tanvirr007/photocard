@@ -1,11 +1,9 @@
 # Photo Card Generator
-
-A web-based tool for creating beautiful, customizable photo cards and social media graphics. Perfect for news websites, bloggers, and content creators who need to generate professional-looking visuals quickly.
+- A web-based tool for creating beautiful, customizable photo cards and social media graphics. Perfect for news websites, bloggers, and content creators who need to generate professional-looking visuals quickly.
 
 ![Photo Card Generator](./preview.png)
 
 ## Features
-
 - **Multiple Templates**: Choose from various professionally designed templates including Classic Newspaper, Jamuna, Prothom Alo, and more
 - **Bengali Language Support**: Full support for Bengali text with proper fonts and typography
 - **Customizable Content**: Edit headings, subheadings, dates, and other text elements
@@ -19,7 +17,6 @@ A web-based tool for creating beautiful, customizable photo cards and social med
 - **Local Storage**: Automatically saves your work and preferences
 
 ## Technologies Used
-
 - **HTML5**: Semantic markup and structure
 - **CSS3**: Custom properties, flexbox, and responsive design
 - **Vanilla JavaScript**: No frameworks, pure JavaScript for optimal performance
@@ -30,13 +27,13 @@ A web-based tool for creating beautiful, customizable photo cards and social med
 ## Installation & Setup
 
 ### Option 1: Online Version
-Visit [photocard.aminul.dev](https://photocard.aminul.dev) to use the tool directly in your browser.
+- Visit [Demo](https://tanvirr007.github.io/photocard) to use the tool directly in your browser
 
 ### Option 2: Local Development
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/photocard-generator.git
-   cd photocard-generator
+   git clone https://github.com/tanvirr007/photocard
+   cd photocard
    ```
 
 2. Open `index.html` in your web browser:
@@ -44,14 +41,13 @@ Visit [photocard.aminul.dev](https://photocard.aminul.dev) to use the tool direc
    open index.html
    ```
 
-   Or serve it with a local server for better functionality:
+- Alternatively, serve it with a local server for better functionality:
    ```bash
    python -m http.server 8000
    # Then visit http://localhost:8000
    ```
 
 ## Usage
-
 1. **Select a Template**: Choose from the available templates in the sidebar
 2. **Customize Content**:
    - Edit text fields like heading, subheading, date
@@ -68,7 +64,6 @@ Visit [photocard.aminul.dev](https://photocard.aminul.dev) to use the tool direc
 6. **Export**: Click the download button to save your creation as a PNG image
 
 ## Available Templates
-
 - **Classic Newspaper**: Traditional layout with large image and bottom text
 - **Jamuna**: Modern design with overlay text
 - **Prothom Alo**: Newspaper-style layout
@@ -82,16 +77,22 @@ Visit [photocard.aminul.dev](https://photocard.aminul.dev) to use the tool direc
 - **Jugantor**: Dynamic layout
 - **Inqilab**: Impactful presentation
 
-## Browser Support
+### Adding New Templates
+- To add a new template:
 
+1. Add a new object to the `templates` array in `templates.js`
+2. Include `id`, `name`, `description`, `defaults`, `html`, and `css` properties
+3. Use template variables in curly braces (e.g., `{heading}`, `{image}`)
+4. Test the template thoroughly
+
+## Browser Support
 - Chrome 70+
 - Firefox 65+
 - Safari 12+
 - Edge 79+
 
 ## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
+- Contributions are welcome! Please feel free to submit a Pull Request
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -99,34 +100,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Adding New Templates
-
-To add a new template:
-
-1. Add a new object to the `templates` array in `templates.js`
-2. Include `id`, `name`, `description`, `defaults`, `html`, and `css` properties
-3. Use template variables in curly braces (e.g., `{heading}`, `{image}`)
-4. Test the template thoroughly
-
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-**Aminul Islam**
-- Website: [aminul.net](https://aminul.net)
-- GitHub: [@AminulBD](https://github.com/AminulBD)
-- Facebook: [@aminul.run](https://www.facebook.com/aminul.run)
-- X: [@AminulWP](https://x.com/AminulWP)
-- LinkedIn: [@aminulbd](https://www.linkedin.com/in/aminulbd)
-
-## Acknowledgments
-
-- Icons from [Lucide](https://lucide.dev/) & [Heroicons](https://heroicons.com/)
-- Fonts from [Google Fonts](https://fonts.google.com/)
-- UI components inspired by modern design principles
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 ---
-
-Made with ❤️ for content creators and news organizations.
