@@ -158,7 +158,7 @@ function init() {
     // Listeners
     elements.templateSelect.addEventListener('change', (e) => {
         state.templateId = e.target.value;
-        
+
         // Update defaults if available
         const template = templates.find(t => t.id === state.templateId);
         if (template && template.defaults) {
@@ -180,11 +180,11 @@ function init() {
         render();
     });
 
-    elements.font.addEventListener('change', (e) => { 
-        state.font = e.target.value; 
+    elements.font.addEventListener('change', (e) => {
+        state.font = e.target.value;
         loadGoogleFont(state.font);
-        saveState(); 
-        render(); 
+        saveState();
+        render();
     });
     elements.accentColor.addEventListener('input', (e) => { state.accentColor = e.target.value; saveState(); render(); });
     elements.bgColor.addEventListener('input', (e) => { state.bgColor = e.target.value; saveState(); render(); });
@@ -193,7 +193,7 @@ function init() {
     elements.imageObjectFit.addEventListener('change', (e) => { state.imageObjectFit = e.target.value; saveState(); render(); });
     elements.imageX.addEventListener('input', (e) => { state.imageX = parseInt(e.target.value); saveState(); render(); });
     elements.imageY.addEventListener('input', (e) => { state.imageY = parseInt(e.target.value); saveState(); render(); });
-    
+
     elements.image.addEventListener('change', handleImageUpload.bind(null, 'image'));
     elements.imageUrl.addEventListener('input', (e) => { state.image = e.target.value; saveState(); render(); });
     elements.logo.addEventListener('change', handleImageUpload.bind(null, 'logo'));
@@ -263,24 +263,24 @@ async function loadFonts() {
 
     const webSafeFonts = [
         // Windows
-        'Segoe UI', 'Calibri', 'Cambria', 'Candara', 'Consolas', 'Constantia', 'Corbel', 
+        'Segoe UI', 'Calibri', 'Cambria', 'Candara', 'Consolas', 'Constantia', 'Corbel',
         'Franklin Gothic Medium', 'Gabriola', 'Palatino Linotype', 'Perpetua', 'Rockwell',
         'Franklin Gothic', 'Century Gothic',
         // macOS
-        'Helvetica Neue', 'Avenir', 'Avenir Next', 'Optima', 'Gill Sans', 'Didot', 
+        'Helvetica Neue', 'Avenir', 'Avenir Next', 'Optima', 'Gill Sans', 'Didot',
         'American Typewriter', 'Baskerville', 'Geneva', 'Monaco',
         // Common / Web Safe
-        'Arial', 'Helvetica', 'Verdana', 'Tahoma', 'Trebuchet MS', 
-        'Times New Roman', 'Georgia', 'Garamond', 'Courier New', 
+        'Arial', 'Helvetica', 'Verdana', 'Tahoma', 'Trebuchet MS',
+        'Times New Roman', 'Georgia', 'Garamond', 'Courier New',
         'Brush Script MT', 'Impact', 'Arial Black', 'Comic Sans MS'
     ].sort();
 
     try {
         const response = await fetch('https://api.fontsource.org/v1/fonts');
         const fonts = await response.json();
-        
+
         const googleFonts = fonts.filter(f => f.type === 'google');
-        
+
         const choices = [];
 
         // Add Popular Group
@@ -303,7 +303,7 @@ async function loadFonts() {
             }
         });
         choices.push(popularGroup);
-        
+
         // Add System Fonts Group
         const systemGroup = {
             label: 'Standard System Fonts',
@@ -343,7 +343,7 @@ async function loadFonts() {
         choices.push(allGroup);
 
         fontChoices.setChoices(choices, 'value', 'label', true);
-        
+
         // Ensure initial font is loaded
         if (state.font) {
             loadGoogleFont(state.font);
@@ -370,7 +370,7 @@ async function loadSystemFonts() {
     try {
         const availableFonts = await window.queryLocalFonts();
         const uniqueFonts = [...new Set(availableFonts.map(f => f.family))].sort();
-        
+
         const localGroup = {
             label: 'Installed Local Fonts',
             id: 'local',
@@ -386,7 +386,7 @@ async function loadSystemFonts() {
         // Add to choices (prepend or append)
         // Note: setChoices with replace=false appends.
         fontChoices.setChoices([localGroup], 'value', 'label', false);
-        
+
         btn.textContent = `Success! ${uniqueFonts.length} fonts loaded`;
         setTimeout(() => {
             btn.style.display = 'none';
@@ -404,24 +404,24 @@ async function loadSystemFonts() {
 
 function loadGoogleFont(fontFamily) {
     if (!fontFamily) return;
-    
+
     // Check if it's a system/local font (simple heuristic: if it's in our webSafe list or we don't want to fetch it)
     // But we don't easily know if a random string is a google font or local font here without checking the list.
     // However, fetching a non-existent google font usually just 404s harmlessly or we can check if it was in the google list.
     // For now, we'll just try to load it if it looks like a google font.
-    
+
     // Optimization: Don't try to load web safe fonts from Google
     const webSafeFonts = [
         // Windows
-        'Segoe UI', 'Calibri', 'Cambria', 'Candara', 'Consolas', 'Constantia', 'Corbel', 
+        'Segoe UI', 'Calibri', 'Cambria', 'Candara', 'Consolas', 'Constantia', 'Corbel',
         'Franklin Gothic Medium', 'Gabriola', 'Palatino Linotype', 'Perpetua', 'Rockwell',
         'Franklin Gothic', 'Century Gothic',
         // macOS
-        'Helvetica Neue', 'Avenir', 'Avenir Next', 'Optima', 'Gill Sans', 'Didot', 
+        'Helvetica Neue', 'Avenir', 'Avenir Next', 'Optima', 'Gill Sans', 'Didot',
         'American Typewriter', 'Baskerville', 'Geneva', 'Monaco',
         // Common / Web Safe
-        'Arial', 'Helvetica', 'Verdana', 'Tahoma', 'Trebuchet MS', 
-        'Times New Roman', 'Georgia', 'Garamond', 'Courier New', 
+        'Arial', 'Helvetica', 'Verdana', 'Tahoma', 'Trebuchet MS',
+        'Times New Roman', 'Georgia', 'Garamond', 'Courier New',
         'Brush Script MT', 'Impact', 'Arial Black', 'Comic Sans MS'
     ];
     if (webSafeFonts.includes(fontFamily)) return;
@@ -463,12 +463,12 @@ function updateDynamicInputs() {
         const label = document.createElement('label');
         // Capitalize first letter
         label.textContent = field.charAt(0).toUpperCase() + field.slice(1);
-        
+
         const textarea = document.createElement('textarea');
         textarea.dataset.field = field;
         textarea.rows = ['heading', 'content', 'subheading'].indexOf(field) !== -1 ? 3 : 1;
         textarea.value = state[field] || '';
-        
+
         textarea.addEventListener('input', (e) => {
             state[field] = e.target.value;
             saveState();
@@ -507,11 +507,11 @@ function render() {
         styleTag.id = 'template-styles';
         document.head.appendChild(styleTag);
     }
-    
+
     const logoSelectors = [
-        '.logo-wrapper', '.logo-badge', '.logo-overlay', '.logo-area', 
+        '.logo-wrapper', '.logo-badge', '.logo-overlay', '.logo-area',
         '.mini-logo', '.logo-section', '.pa-logo', '.bbc-logo-wrapper',
-        '.ntv-logo-badge', '.btv-logo-area', '.adesh-logo', 
+        '.ntv-logo-badge', '.btv-logo-area', '.adesh-logo',
         '.somoy-logo-overlay', '.jamuna-logo', '.top-logo'
     ];
     const hideLogoCss = `
@@ -523,14 +523,14 @@ function render() {
 
     // Prepare HTML
     let html = template.html;
-    
+
     const formatText = (text) => (text || '').replace(/\n/g, '<br>');
 
     // Replace placeholders
     const placeholders = extractPlaceholders(template.html);
     placeholders.forEach(key => {
         if (SYSTEM_FIELDS.includes(key)) return;
-        
+
         const val = state[key] || '';
         const formatted = formatText(val);
         const regex = new RegExp(`{${key}}`, 'g');
@@ -544,15 +544,15 @@ function render() {
     html = html.replace(/{accentColor}/g, state.accentColor);
     html = html.replace(/{bgColor}/g, state.bgColor);
     html = html.replace(/{textColor}/g, state.textColor);
-    
+
     // Placeholder images
     const placeholderImg = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgZmlsbD0iI2YzZjRmNiI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiLz48dGV4dCB4PSI1MCIgeT0iNTAiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM5Y2EzYWYiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0Ij5JTUFHRTwvdGV4dD48L3N2Zz4=';
     const transparentPixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-    
+
     // Inject data-main-image attribute to identify the main image
     const imgVal = state.image || placeholderImg;
     html = html.replace(/{image}/g, imgVal + '" data-main-image="true');
-    
+
     // Logo Logic
     if (state.logo) {
         html = html.replace(/{logo}/g, state.logo);
@@ -560,13 +560,13 @@ function render() {
     } else {
         html = html.replace(/{logo}/g, transparentPixel);
     }
-    
+
     // Ad Image Logic - if no ad image, we might want to hide the container or show empty
     // For now, let's just replace. If empty, the img src will be empty.
     // Better: Use a class to hide if empty? Or just let it be empty.
     // Let's use a transparent pixel if empty to avoid broken image icon
     html = html.replace(/{adImage}/g, state.adImage || transparentPixel);
-    
+
     // Add a class to wrapper if ad exists to adjust layout if needed
     if (state.adImage) {
         html = html.replace('template-wrapper', 'template-wrapper has-ad');
@@ -586,19 +586,19 @@ function fitPreview() {
     const wrapper = elements.canvasWrapper;
     const container = wrapper.parentElement;
     if (!container) return;
-    
+
     const padding = 80; // Total padding
     const availableWidth = container.clientWidth - padding;
     const availableHeight = container.clientHeight - padding;
-    
+
     const scale = Math.min(
         availableWidth / 1080,
         availableHeight / 1080
     );
-    
+
     // Ensure scale is not negative or infinite
     const safeScale = (scale > 0 && scale < 5) ? scale : 0.5;
-    
+
     wrapper.style.transform = `scale(${safeScale})`;
 }
 
@@ -617,7 +617,7 @@ function downloadImage() {
         container.style.width = '1080px';
         container.style.height = '1080px';
         container.style.zIndex = '-1';
-        
+
         // Clone the element
         const clonedElement = originalElement.cloneNode(true);
         // Ensure the clone has the correct dimensions and no transform
@@ -652,7 +652,7 @@ function downloadImage() {
                     // Use offsetWidth/Height to get the element's layout size (untransformed)
                     const width = img.offsetWidth;
                     const height = img.offsetHeight;
-                    
+
                     if (width === 0 || height === 0) return;
 
                     const canvas = document.createElement('canvas');

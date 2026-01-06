@@ -51,7 +51,7 @@ export const templates = [
         overflow: hidden;
         position: relative;
       }
-      
+
       .classic-theme .ad-container {
         display: none;
       }
@@ -66,7 +66,7 @@ export const templates = [
         background: #f3f4f6;
         flex: 0 0 auto;
       }
-      
+
       .classic-theme .ad-container img {
         max-width: 100%;
         max-height: 100%;
@@ -80,13 +80,13 @@ export const templates = [
         position: relative;
         overflow: hidden;
       }
-      
+
       .classic-theme .main-photo {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-      
+
       .classic-theme .overlay {
         position: absolute;
         bottom: 0;
@@ -97,14 +97,14 @@ export const templates = [
         display: flex;
         align-items: flex-end;
       }
-      
+
       .classic-theme .subheading {
         font-size: 32px;
         margin: 0;
         font-weight: 500;
         text-shadow: 0 2px 4px rgba(0,0,0,0.3);
       }
-      
+
       .classic-theme .content-area {
         height: 430px;
         flex: 0 0 auto;
@@ -113,13 +113,13 @@ export const templates = [
         display: flex;
         flex-direction: column;
       }
-      
+
       .classic-theme .accent-bar {
         height: 8px;
         width: 100%;
         background-color: var(--accent);
       }
-      
+
       .classic-theme .header-row {
         padding: 40px 50px;
         flex: 1;
@@ -128,7 +128,7 @@ export const templates = [
         justify-content: center;
         text-align: center;
       }
-      
+
       .classic-theme .heading {
         font-size: 64px;
         line-height: 1.2;
@@ -136,7 +136,7 @@ export const templates = [
         color: var(--text);
         font-weight: 700;
       }
-      
+
       .classic-theme .footer-row {
         padding: 0 50px 40px;
         display: flex;
@@ -160,7 +160,7 @@ export const templates = [
         justify-content: center;
         overflow: hidden;
       }
-      
+
       .classic-theme .logo {
         max-width: 100%;
         max-height: 100%;
@@ -170,7 +170,7 @@ export const templates = [
       .classic-theme .date-pill, .classic-theme .domain-pill, .classic-theme .logo-area  {
         flex: 1;
       }
-      
+
       .classic-theme .date-pill, .classic-theme .domain-pill {
         font-size: 24px;
         color: var(--text);
@@ -225,7 +225,7 @@ export const templates = [
         font-family: var(--font), sans-serif;
         overflow: hidden;
       }
-      
+
       .modern-theme .ad-container {
         display: none;
       }
@@ -240,7 +240,7 @@ export const templates = [
         align-items: center;
         flex: 0 0 auto;
       }
-      
+
       .modern-theme .ad-container img {
         max-width: 100%;
         max-height: 100%;
@@ -253,13 +253,13 @@ export const templates = [
         position: relative;
         overflow: hidden;
       }
-      
+
       .modern-theme .hero-image {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
-      
+
       .modern-theme .logo-badge {
         position: absolute;
         top: 40px;
@@ -277,7 +277,7 @@ export const templates = [
         align-items: center;
         justify-content: center;
       }
-      
+
       .modern-theme .logo-badge img {
         max-width: 100%;
         max-height: 100%;
@@ -285,7 +285,7 @@ export const templates = [
         height: auto;
         object-fit: contain;
       }
-      
+
       .modern-theme .bottom-half {
         height: 486px;
         flex: 0 0 auto;
@@ -295,7 +295,7 @@ export const templates = [
         justify-content: center;
         background: var(--bg);
       }
-      
+
       .modern-theme .meta-line {
         font-size: 24px;
         color: var(--accent);
@@ -304,9 +304,9 @@ export const templates = [
         text-transform: uppercase;
         letter-spacing: 1px;
       }
-      
+
       .modern-theme .separator { margin: 0 10px; color: var(--text); opacity: 0.4; }
-      
+
       .modern-theme .headline {
         font-size: 72px;
         line-height: 1.1;
@@ -314,7 +314,7 @@ export const templates = [
         margin: 0 0 30px 0;
         font-weight: 800;
       }
-      
+
       .modern-theme .summary {
         font-size: 32px;
         color: var(--text);
@@ -322,7 +322,7 @@ export const templates = [
         margin: 0 0 40px 0;
         line-height: 1.4;
       }
-      
+
       .modern-theme .read-more-btn {
         align-self: flex-start;
         padding: 15px 40px;
@@ -332,7 +332,7 @@ export const templates = [
         border-radius: 50px;
       }
     `
-  },    
+  },
   {
     id: 'breaking',
     name: 'Breaking News',
@@ -397,7 +397,7 @@ export const templates = [
         border-radius: 0;
         flex: 0 0 auto;
       }
-      
+
       .breaking-theme .ad-container img {
         max-width: 100%;
         max-height: 100%;
@@ -534,7 +534,7 @@ export const templates = [
         text-transform: uppercase;
       }
     `
-  },    
+  },
   {
     id: 'quote',
     name: 'Quote Card',
@@ -549,7 +549,7 @@ export const templates = [
         <div class="main-layout">
             <img src="{image}" class="bg-image" />
             <div class="overlay"></div>
-            
+
             <div class="content-wrapper">
                 <div class="quote-mark">“</div>
                 <h1 class="quote-text">{heading}</h1>
@@ -607,7 +607,7 @@ export const templates = [
         margin-top: auto;
         flex: 0 0 auto;
       }
-      
+
       .quote-theme .ad-container img {
         max-height: 100%;
         max-width: 100%;
@@ -749,7 +749,7 @@ export const templates = [
         display: flex;
         flex-direction: column;
       }
-      
+
       .minimal-theme .minimal-content-wrapper {
         flex: 1;
         padding: 60px;
@@ -773,7 +773,7 @@ export const templates = [
         background: #f9fafb;
         flex: 0 0 auto;
       }
-      
+
       .minimal-theme .ad-container img {
         max-width: 100%;
         max-height: 100%;
@@ -861,7 +861,7 @@ export const templates = [
         <div class="image-section">
             <img src="{image}" class="main-image" />
         </div>
-        
+
         <div class="content-section">
             <div class="logo-section">
                 <div class="logo-circle">
@@ -878,7 +878,7 @@ export const templates = [
                 {domain}
             </div>
         </div>
-        
+
         <div class="ad-container">
             <img src="{adImage}" />
         </div>
@@ -973,7 +973,7 @@ export const templates = [
         opacity: 0.7x;
         color: #6b7280;
       }
-      
+
       .feature-theme .ad-container {
         display: none;
       }
@@ -988,7 +988,7 @@ export const templates = [
         background: white;
         flex: 0 0 auto;
       }
-      
+
       .feature-theme .ad-container img {
         max-width: 100%;
         max-height: 100%;
@@ -1797,7 +1797,7 @@ export const templates = [
         font-size: 24px;
         font-weight: 700;
       }
-      
+
       .somoy-theme .somoy-tag::after {
         content: '';
         position: absolute;
@@ -1864,7 +1864,7 @@ export const templates = [
         height: auto;
         object-fit: contain;
       }
-      
+
       .somoy-theme .somoy-more {
         background: var(--accent);
         color: white;
@@ -1874,7 +1874,7 @@ export const templates = [
         line-height: 1;
         margin-bottom: 10px;
       }
-        
+
       .somoy-theme .somoy-time-bar {
         position: relative;
         height: 44px;
@@ -1885,7 +1885,7 @@ export const templates = [
         font-size: 24px;
         font-weight: 700;
       }
-      
+
       .somoy-theme .somoy-time-bar::before {
         content: '';
         position: absolute;
@@ -2172,7 +2172,7 @@ export const templates = [
       .vertical1-theme .quote-icon {
         margin-bottom: 40px;
       }
-      
+
       .vertical1-theme .quote-icon svg {
         width: 100px;
         height: 100px;
@@ -2258,7 +2258,7 @@ export const templates = [
         margin: 0;
         font-weight: 500;
       }
-      
+
       .vertical1-theme .deco-squares {
         position: absolute;
         top: 60px;
@@ -2266,7 +2266,7 @@ export const templates = [
         display: flex;
         gap: 15px;
       }
-      
+
       .vertical1-theme .deco-squares span {
         width: 20px;
         height: 20px;
@@ -2278,7 +2278,7 @@ export const templates = [
       .vertical1-theme .ad-container {
         display: none;
       }
-      
+
       .vertical1-theme.has-ad .ad-container {
         width: 100%;
         max-height: 120px;
@@ -2290,7 +2290,7 @@ export const templates = [
         flex: 0 0 auto;
         z-index: 10;
       }
-      
+
       .vertical1-theme.has-ad .ad-container img {
         max-width: 100%;
         max-height: 100%;
@@ -2499,11 +2499,11 @@ export const templates = [
         justify-content: center;
         align-items: center;
       }
-      
+
       .gradient-news-theme.has-ad .footer-bar {
         bottom: 120px;
       }
-      
+
       .gradient-news-theme.has-ad .content-section {
         bottom: 220px;
       }
